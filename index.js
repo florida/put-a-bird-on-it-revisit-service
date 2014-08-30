@@ -29,14 +29,19 @@ app.post('/service', function(req, res) {
   var imgBuff = dataUriToBuffer(req.body.content.data)
 
   // Transform the image
-  var transformed = transform(imgBuff)
+  var transformed = transform(imgBuff, displayImage)
 
-  var dataUri = 'data:' + imgBuff.type + ';base64,' + transformed.toString('base64')
-  req.body.content.data = dataUri
-  req.body.content.type = imgBuff.type
-  res.json(req.body)
+  function displayImage(image) {
+    var dataUri = 'data:' + imgBuff.type + ';base64,' + image.toString('base64')
 
+    req.body.content.data = dataUri
+    req.body.content.type = imgBuff.type
+    res.json(req.body)
+  }
 })
+
+
+
 
 var port = 8000
 app.listen(port)

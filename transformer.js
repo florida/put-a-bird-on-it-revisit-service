@@ -1,8 +1,12 @@
-module.exports = function (imageBuffer) {
+module.exports = function (imageBuffer, callback) {
+  var fs = require('fs'),
+      gm = require('gm');
 
-
-  // do stuff to transform image
-
-  return imageBuffer;
-
+  var modBuffer = ""
+  gm(imageBuffer)
+  .flip()
+  .toBuffer(function(err, buffer) {
+    if (err) return handle(err);
+    callback(buffer);
+  });
 };
