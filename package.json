@@ -1,5 +1,5 @@
 {
-  "name": "revisit.link-quickstart",
+  "name": "put-a-bird-on-it-revisit-service",
   "version": "1.0.0",
   "description": "Quick skeleton revisit.link service, generalized from kid-icarus's glitch-api-example",
   "main": "index.js",
@@ -12,7 +12,8 @@
   "dependencies": {
     "body-parser": "^1.6.2",
     "data-uri-to-buffer": "0.0.3",
-    "express": "^4.8.2"
+    "express": "^4.8.2",
+    "gm": "^1.16.0"
   },
   "devDependencies": {
     "nodemon": "^1.2.1"
