@@ -31,8 +31,8 @@ app.post('/service', function(req, res) {
   // Transform the image
   var transformed = transform(imgBuff, displayImage)
 
-  function displayImage(image) {
-    var dataUri = 'data:' + imgBuff.type + ';base64,' + image.toString('base64')
+  function displayImage(dataUri) {
+
 
     req.body.content.data = dataUri
     req.body.content.type = imgBuff.type
