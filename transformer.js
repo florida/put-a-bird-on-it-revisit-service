@@ -3,7 +3,7 @@ module.exports = function (imageBuffer, callback) {
   var Image = Canvas.Image;
   var fs = require('fs');
 
-  var overlay = fs.readFileSync('me.jpg');
+  var overlay = fs.readFileSync('put-a-bird-on-it2.png');
 
   var img = new Image;
   img.src = imageBuffer;
@@ -20,9 +20,13 @@ module.exports = function (imageBuffer, callback) {
   overlay_image.src = overlay;
 
   ctx.drawImage(img, 0, 0, width, height);
-  ctx.drawImage(overlay_image,0,0, 100,100);
+
+  //ctx.drawImage(overlay_image,0,0, 300,300);
+  console.log(overlay_image)
+
   ctx.rect(20,20,150,100);
   ctx.stroke();
   callback(canvas.toDataURL());
+
 
 };
