@@ -19,14 +19,15 @@ module.exports = function (imageBuffer, callback) {
   var overlay_image = new Image;
   overlay_image.src = overlay;
 
-  ctx.drawImage(img, 0, 0, width, height);
+    console.log(overlay_image)
+    ctx.drawImage(img, 0, 0, width, height);
+    ctx.drawImage(overlay_image,0,0, 300,300);
+    ctx.rect(20,20,150,100);
+    ctx.stroke();
+    callback(canvas.toDataURL());
 
-  //ctx.drawImage(overlay_image,0,0, 300,300);
-  console.log(overlay_image)
 
-  ctx.rect(20,20,150,100);
-  ctx.stroke();
-  callback(canvas.toDataURL());
+
 
 
 };
